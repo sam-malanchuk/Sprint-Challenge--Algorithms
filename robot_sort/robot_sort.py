@@ -96,36 +96,24 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        # Bubble sort
-        # self.swap_item()
-        # while self.can_move_right():
-        #     self.move_right()
-        #     if self.compare_item() == 1:
-        #         self.swap_item()
-        #         self.move_left()
-        #         self.swap_item()
-        #         self.move_right()
-        #     else:
-        #         self.move_left()
-        #         self.swap_item()
-        #         self.move_right()
-        #     self.swap_item()
-        # self.swap_item()
+        self.set_light_on()
+        # light is on until sort complete
+        while self.light_is_on():
+          self.swap_item()
+          # turn the light off when nothing left on the right to sort
+          if not self.can_move_right():
+            self.set_light_off()
+          while self.can_move_right():
+            self.move_right()
+            # swap if the one holding is larger
+            if self.compare_item() == 1:
+              self.swap_item()
+          # end the loop
+          while self.compare_item() is not None:
+            self.move_left()
 
-        # Insertion Sort
-        self.swap_item()
-        while self.can_move_right:
-            if self.can_move_left:
-                self.move_left()
-                if self.compare_item == 1:
-                    self.swap_item()
-                    self.move_right()
-                    self.swap_item()
-                    self.move_left()
-                    self.swap_item()
-            else:
-                self.move_right()
+          self.swap_item()
+          self.move_right()
 
         return None
 
