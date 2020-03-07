@@ -7,18 +7,19 @@ pseudocode with respect to the input size n of each of the following:
 
 ```python
 a)  a = 0
-    while (a < n * n * n): #n
+    while (a < n * n * n): # n
       a = a + n * n
     # O(n) 
 ```
 
-```
+```python
 b)  sum = 0
-    for i in range(n):
+    for i in range(n): # n
       j = 1
-      while j < n:
+      while j < n: # log n
         j *= 2
         sum += 1
+    # O(n) + O(log n) = O(n^^3/2) == O(n log n)
 ```
 
 ```
