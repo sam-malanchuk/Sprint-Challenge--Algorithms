@@ -22,12 +22,13 @@ b)  sum = 0
     # O(n) + O(log n) = O(n^^3/2) == O(n log n)
 ```
 
-```
+```python
 c)  def bunnyEars(bunnies):
       if bunnies == 0:
         return 0
 
-      return 2 + bunnyEars(bunnies-1)
+      return 2 + bunnyEars(bunnies-1) # n-1
+    # O(n-1) = O(n)
 ```
 
 ## Exercise II
