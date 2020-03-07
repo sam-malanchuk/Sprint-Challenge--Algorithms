@@ -10,4 +10,28 @@ c) The recursive function returns 2 + itself minues one. The function is only be
 
 ## Exercise II
 
+```python
 
+function (n)
+  onFloorF = false
+  currentFloor = c
+  brokeOnPreviousFloor = False
+  while !onFloorF {
+    if dropEgg() == True:
+      brokeOnPreviousFloor = True
+      if brokeOnPreviousFloor:
+        currentFloor -= 1
+      else:
+        onFloorF = True
+    else:
+      brokeOnPreviousFloor = False
+      if brokeOnPreviousFloor:
+        currentFloor += 1
+        onFloorF = True
+      else:
+        currentFloor += 1
+  }
+
+```
+
+Either way you do it, with a for loop or a while loop it seems the maximum amount of times you would run the function is n. I would even go as far as to say that you will always solve it slightly faster than n as your f will most likely not be the roof or ground floor. This means the function comes out to a linear line O(n).
