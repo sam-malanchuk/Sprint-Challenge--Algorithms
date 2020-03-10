@@ -96,9 +96,39 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # Light = False symbolizes sorting not complete
+        while self.light_is_on() == False:
+            # Light = True, list completed sorting
+            if self.can_move_right() == False:
+                self.set_light_on()
 
+            # put down None to begin
+            self.swap_item()
+            while self.can_move_right():
+                # move right and compare each item, leaving the larger one
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+            # when at the end of the list, go back to where you left None
+            while self.compare_item() != None:
+                self.move_left()
+            # grab None
+            self.swap_item()
+            # and move one over to the right to continue
+            self.move_right()
+
+# Understand
+# Use the robots built in functions to sort a list of numbers
+
+# Plan
+# I can use bubble sort as it does not require the storing of any variables
+
+# Execute
+# While I can move right,
+#     - compare each number to the right see if the one holding is larger
+#           - swap to put down the larger one
+#     - go back left until i get to None
+#     - go right one, and do it all over again
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
